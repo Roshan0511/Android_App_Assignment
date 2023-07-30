@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color gray
+color white
+drawable baseline_edit_24
+drawable baseline_person_24
+drawable camera
+drawable gallery
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable text_background
+id address
+id camera_ll
+id gallery_ll
+id heading_rl
+id latitude
+id longitude
+id markAttendance
+id progressBar
+id remarks
+id selectedImage
+id uploadImage
+layout activity_main
+layout image_chooser_dialog
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.AndroidAppAssignment
+style Theme.AndroidAppAssignment
+xml backup_rules
+xml data_extraction_rules
+xml file_paths
