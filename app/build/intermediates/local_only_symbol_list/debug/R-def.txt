@@ -4,16 +4,16 @@ color black
 color gray
 color white
 drawable baseline_edit_24
-drawable baseline_person_24
 drawable camera
 drawable gallery
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable location_img
+drawable man_icon
 drawable text_background
 id address
 id camera_ll
 id gallery_ll
-id heading_rl
 id latitude
 id longitude
 id markAttendance
@@ -23,6 +23,7 @@ id selectedImage
 id uploadImage
 layout activity_main
 layout image_chooser_dialog
+layout modern_design
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

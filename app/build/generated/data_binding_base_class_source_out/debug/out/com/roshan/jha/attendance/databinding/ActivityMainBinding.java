@@ -28,9 +28,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView address;
 
   @NonNull
-  public final RelativeLayout headingRl;
-
-  @NonNull
   public final TextView latitude;
 
   @NonNull
@@ -52,13 +49,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ConstraintLayout uploadImage;
 
   private ActivityMainBinding(@NonNull RelativeLayout rootView, @NonNull TextView address,
-      @NonNull RelativeLayout headingRl, @NonNull TextView latitude, @NonNull TextView longitude,
+      @NonNull TextView latitude, @NonNull TextView longitude,
       @NonNull MaterialButton markAttendance, @NonNull ProgressBar progressBar,
       @NonNull AppCompatEditText remarks, @NonNull CircleImageView selectedImage,
       @NonNull ConstraintLayout uploadImage) {
     this.rootView = rootView;
     this.address = address;
-    this.headingRl = headingRl;
     this.latitude = latitude;
     this.longitude = longitude;
     this.markAttendance = markAttendance;
@@ -98,12 +94,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.address;
       TextView address = ViewBindings.findChildViewById(rootView, id);
       if (address == null) {
-        break missingId;
-      }
-
-      id = R.id.heading_rl;
-      RelativeLayout headingRl = ViewBindings.findChildViewById(rootView, id);
-      if (headingRl == null) {
         break missingId;
       }
 
@@ -149,8 +139,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((RelativeLayout) rootView, address, headingRl, latitude,
-          longitude, markAttendance, progressBar, remarks, selectedImage, uploadImage);
+      return new ActivityMainBinding((RelativeLayout) rootView, address, latitude, longitude,
+          markAttendance, progressBar, remarks, selectedImage, uploadImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

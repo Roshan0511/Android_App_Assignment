@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Lenovo\\.gradle\\daemon\\8.0\\com.roshan.jha.attendance.app-mergeDebugResources-30:\\layout\\modern_design.xml",
+        "source": "C:\\Users\\Lenovo\\.gradle\\daemon\\8.0\\com.roshan.jha.attendance.app-main-33:\\layout\\modern_design.xml"
+    },
+    {
         "merged": "com.roshan.jha.attendance.app-mergeDebugResources-30:/layout/activity_main.xml",
         "source": "com.roshan.jha.attendance.app-main-33:/layout/activity_main.xml"
     },

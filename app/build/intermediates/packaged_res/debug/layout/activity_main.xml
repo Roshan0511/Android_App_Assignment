@@ -7,205 +7,225 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/heading_rl"
-        android:background="#ff6750a4"
-        android:paddingVertical="12.5dp" >
+        android:text="Transline Technologies"
+        android:layout_marginStart="20dp"
+        android:textColor="#ff6750a4"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="35dp"
+        android:layout_centerVertical="true"
+        android:fontFamily="serif"
+        android:layout_alignParentTop="true" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Transline Technologies"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:layout_centerVertical="true"
-            android:fontFamily="serif"
-            android:layout_alignParentTop="true" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp" >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/uploadImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="15dp" >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/selectedImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/man_icon"
+            app:civ_border_color="@color/gray"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/selectedImage"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/baseline_person_24"
-                app:civ_border_color="@color/gray"
-                app:civ_border_width="0.5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/baseline_edit_24"
+            app:layout_constraintBottom_toBottomOf="@id/selectedImage"
+            app:layout_constraintEnd_toEndOf="@+id/selectedImage"
+            app:layout_constraintStart_toEndOf="@id/selectedImage" />
 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/baseline_edit_24"
-                app:layout_constraintBottom_toBottomOf="@id/selectedImage"
-                app:layout_constraintEnd_toEndOf="@+id/selectedImage"
-                app:layout_constraintStart_toEndOf="@id/selectedImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </RelativeLayout>
-
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/heading_rl" >
+        android:layout_below="@id/uploadImage"
+        android:layout_marginTop="10dp"
+        android:saveEnabled="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Location Details"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:layout_marginTop="40dp"
                 android:layout_marginHorizontal="20dp"
-                app:cardElevation="3dp" >
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
-                    <TextView
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Location Details"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="17sp"
-                        android:fontFamily="serif" />
+                        android:layout_height="200dp"
+                        app:cardCornerRadius="20dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/location_img" />
+                    </com.google.android.material.card.MaterialCardView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:weightSum="1"
-                        android:orientation="horizontal" >
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="15dp">
 
-                        <TextView
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Longitude: "
-                            android:layout_weight="0.35"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:fontFamily="serif" />
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
 
-                        <TextView
-                            android:id="@+id/longitude"
-                            android:layout_width="0dp"
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.35"
+                                android:fontFamily="serif"
+                                android:text="Longitude: "
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/longitude"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.65"
+                                android:fontFamily="serif"
+                                android:text="Please wait..."
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.65"
-                            android:text="Please wait..."
-                            android:textSize="16sp"
-                            android:fontFamily="serif" />
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.35"
+                                android:fontFamily="serif"
+                                android:text="Latitude: "
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/latitude"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.65"
+                                android:fontFamily="serif"
+                                android:text="Please wait..."
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.35"
+                                android:fontFamily="serif"
+                                android:text="Address: "
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.65"
+                                android:fontFamily="serif"
+                                android:text="Please wait..."
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:weightSum="1"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Latitude: "
-                            android:layout_weight="0.35"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:fontFamily="serif" />
-
-                        <TextView
-                            android:id="@+id/latitude"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.65"
-                            android:text="Please wait..."
-                            android:textSize="16sp"
-                            android:fontFamily="serif" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:weightSum="1"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Address: "
-                            android:layout_weight="0.35"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:fontFamily="serif" />
-
-                        <TextView
-                            android:id="@+id/address"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.65"
-                            android:text="Please wait..."
-                            android:textSize="16sp"
-                            android:fontFamily="serif" />
-
-                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Remarks"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:layout_marginTop="40dp"
                 android:layout_marginHorizontal="20dp"
-                app:cardElevation="3dp" >
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Remarks"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="17sp"
-                        android:fontFamily="serif" />
+                    android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/remarks"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@null"
+                        android:fontFamily="serif"
                         android:hint="Enter remarks..."
-                        android:background="@drawable/text_background"
                         android:minHeight="48dp"
-                        android:paddingHorizontal="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="16sp"
-                        android:fontFamily="serif" />
+                        android:paddingHorizontal="20dp"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -214,13 +234,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:text="Mark your attendance"
                 android:layout_marginTop="30dp"
-                android:paddingHorizontal="25dp"/>
+                android:layout_marginBottom="20dp"
+                android:padding="15dp"
+                android:paddingHorizontal="25dp"
+                android:text="Mark your attendance"
+                android:textSize="16sp"
+                app:cornerRadius="15dp" />
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"
